@@ -108,7 +108,7 @@ export function Zones({ zones }: Props) {
             MAPA · CDMX
           </div>
           <div className="absolute bottom-3 left-3 right-3 font-sans text-[11px] text-muted">
-            Bodega en Iztapalapa · Av. Ermita #421
+            Dirección de bodega por confirmar
           </div>
         </div>
       </div>
