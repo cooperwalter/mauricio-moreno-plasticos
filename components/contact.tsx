@@ -40,8 +40,7 @@ export function Contact() {
           </p>
 
           <div className="mt-9 font-sans text-[15px] leading-[2]">
-            <div>📱 WhatsApp · <b>55 4821 0917</b></div>
-            <div>📞 Bodega · <b>55 5612 3048</b></div>
+            <div>📱 WhatsApp · <b>56 1125 3045</b></div>
             <div>📍 Av. Ermita #421, Iztapalapa, CDMX</div>
             <div>🕐 Lun–Sáb · 8:00 am – 6:00 pm</div>
           </div>
