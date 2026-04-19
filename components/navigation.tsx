@@ -55,15 +55,19 @@ export function Navigation() {
 
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
     e.preventDefault();
-    const el = document.getElementById(id);
-    if (!el) return;
-    el.scrollIntoView({
-      behavior:
-        window.matchMedia("(prefers-reduced-motion: reduce)").matches
-          ? "auto"
-          : "smooth",
-      block: "start",
-    });
+    const behavior: ScrollBehavior = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches
+      ? "auto"
+      : "smooth";
+
+    if (id === "inicio") {
+      window.scrollTo({ top: 0, behavior });
+    } else {
+      const el = document.getElementById(id);
+      if (!el) return;
+      el.scrollIntoView({ behavior, block: "start" });
+    }
     history.replaceState(null, "", `#${id}`);
     activeRef.current = id;
     setActive(id);
