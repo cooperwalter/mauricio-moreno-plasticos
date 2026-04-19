@@ -18,6 +18,7 @@ export function FloatingWhatsApp({
       href={whatsappUrl(message)}
       target="_blank"
       rel="noreferrer"
+      aria-label="Escribir a Mauricio por WhatsApp"
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
       className="fixed bottom-6 right-6 z-50 flex items-center gap-2.5 bg-whatsapp text-white rounded-full no-underline font-semibold text-sm"

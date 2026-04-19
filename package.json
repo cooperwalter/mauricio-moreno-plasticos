@@ -6,11 +6,14 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "test:e2e": "playwright test",
     "studio:deploy": "sanity deploy"
   },
   "dependencies": {
     "@sanity/image-url": "^2.1.1",
+    "@vercel/analytics": "^2.0.1",
     "leaflet": "^1.9.4",
     "next": "16.2.4",
     "next-sanity": "^12.3.0",
@@ -18,6 +21,7 @@
     "react-dom": "19.2.4"
   },
   "devDependencies": {
+    "@playwright/test": "^1.59.1",
     "@sanity/vision": "^5.21.0",
     "@tailwindcss/postcss": "^4",
     "@types/leaflet": "^1.9.21",
