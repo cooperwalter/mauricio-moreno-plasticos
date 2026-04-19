@@ -1,0 +1,76 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #f5ecdb;
+  --panel-bg: #efe4cd;
+  --dark-bg: #2a1f14;
+  --dark-fg: #f5ecdb;
+  --ink: #2a1f14;
+  --muted: #6b563a;
+  --rule: #d9c9a8;
+  --accent: #a8501f;
+  --accent-fg: #fff4d6;
+  --ribbon-bg: #2a1f14;
+  --ribbon-fg: #f5ecdb;
+  --whatsapp-green: #1e7d3a;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-panel: var(--panel-bg);
+  --color-dark: var(--dark-bg);
+  --color-dark-fg: var(--dark-fg);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-rule: var(--rule);
+  --color-accent: var(--accent);
+  --color-accent-fg: var(--accent-fg);
+  --color-ribbon-bg: var(--ribbon-bg);
+  --color-ribbon-fg: var(--ribbon-fg);
+  --color-whatsapp: var(--whatsapp-green);
+
+  --font-display: var(--font-dm-serif-display), Georgia, serif;
+  --font-display-italic: var(--font-dm-serif-text), Georgia, serif;
+  --font-sans: var(--font-inter), system-ui, sans-serif;
+  --font-mono: var(--font-plex-mono), ui-monospace, monospace;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+section[id] {
+  scroll-margin-top: 120px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-inter), system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+}
+
+input,
+textarea,
+button {
+  font: inherit;
+}
+
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px transparent inset !important;
+}
