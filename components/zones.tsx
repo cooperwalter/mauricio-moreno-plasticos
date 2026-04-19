@@ -1,3 +1,4 @@
+import { CdmxMap } from "./cdmx-map";
 import type { Zone } from "@/lib/types";
 
 type Props = {
@@ -5,14 +6,6 @@ type Props = {
 };
 
 export function Zones({ zones }: Props) {
-  const mapPins = [
-    { x: 50, y: 52, color: "#1b7a3a", label: "Centro" },
-    { x: 52, y: 26, color: "#c89b2a", label: "Norte" },
-    { x: 50, y: 80, color: "#c89b2a", label: "Sur" },
-    { x: 26, y: 54, color: "#a8501f", label: "Poniente" },
-    { x: 80, y: 60, color: "#6a5438", label: "Edo. Mex" },
-  ];
-
   return (
     <section
       id="entregas"
@@ -60,54 +53,14 @@ export function Zones({ zones }: Props) {
         </div>
 
         <div
-          className="relative bg-bg border border-rule p-6"
+          className="relative bg-bg border border-rule overflow-hidden"
           style={{ aspectRatio: "1 / 1.1" }}
         >
-          <div
-            className="absolute inset-6 opacity-50"
-            style={{
-              background: `repeating-linear-gradient(45deg, transparent 0 8px, var(--rule) 8px 9px)`,
-            }}
-          />
-          <svg
-            viewBox="0 0 100 110"
-            className="absolute inset-6"
-            style={{ width: "calc(100% - 48px)" }}
-          >
-            <path
-              d="M50 8 L72 18 L82 38 L78 58 L82 74 L70 92 L52 98 L32 96 L18 82 L12 64 L14 42 L24 22 Z"
-              fill="none"
-              stroke="var(--ink)"
-              strokeWidth="0.4"
-            />
-            {mapPins.map((p) => (
-              <g key={p.label}>
-                <circle cx={p.x} cy={p.y} r="3" fill={p.color} />
-                <circle
-                  cx={p.x}
-                  cy={p.y}
-                  r="6"
-                  fill="none"
-                  stroke={p.color}
-                  strokeOpacity="0.4"
-                />
-                <text
-                  x={p.x}
-                  y={p.y - 7}
-                  textAnchor="middle"
-                  fontSize="3.2"
-                  fill="var(--ink)"
-                  fontFamily="var(--font-inter), system-ui, sans-serif"
-                >
-                  {p.label}
-                </text>
-              </g>
-            ))}
-          </svg>
-          <div className="absolute top-3 left-3 font-mono text-[10px] text-muted tracking-[1px]">
+          <CdmxMap zones={zones} />
+          <div className="pointer-events-none absolute top-3 left-3 font-mono text-[10px] text-muted tracking-[1px] bg-bg/85 px-1.5 py-0.5">
             MAPA · CDMX
           </div>
-          <div className="absolute bottom-3 left-3 right-3 font-sans text-[11px] text-muted">
+          <div className="pointer-events-none absolute bottom-3 left-3 right-3 font-sans text-[11px] text-muted bg-bg/85 px-1.5 py-0.5">
             Dirección de bodega por confirmar
           </div>
         </div>
