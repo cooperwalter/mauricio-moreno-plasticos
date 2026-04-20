@@ -53,7 +53,7 @@ export function Zones({ zones }: Props) {
         </div>
 
         <div
-          className="relative bg-bg border border-rule overflow-hidden"
+          className="relative isolate bg-bg border border-rule overflow-hidden"
           style={{ aspectRatio: "1 / 1.1" }}
         >
           <CdmxMap zones={zones} />
